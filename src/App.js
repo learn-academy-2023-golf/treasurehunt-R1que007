@@ -4,15 +4,15 @@ import "./App.css"
 
 const App = () => {
   const [board, setBoard] = useState([
-    "?",
-    "?",
-    "?",
-    "?",
-    "?",
-    "?",
-    "?",
-    "?",
-    "?"
+    "🎲",
+    "🎲",
+    "🎲",
+    "🎲",
+    "🎲",
+    "🎲",
+    "🎲",
+    "🎲",
+    "🎲"
   ])
   const [treasureLocation, setTreasureLocation] = useState(Math.floor(Math.random() * board.length))
 
@@ -23,7 +23,7 @@ const App = () => {
 
   const handleGamePlay = (index) => {
    // alert(index)
-let updatedBoard = [...board]
+  let updatedBoard = [...board]
    updatedBoard[index] = "🤡"
    setBoard(updatedBoard)
    if(treasureLocation === index){
@@ -33,11 +33,24 @@ let updatedBoard = [...board]
     updatedBoard[index] = "👹"
    setBoard(updatedBoard)
    }
-   
   }
+  const handleOnClick = () => {
+    //console.log("restart game")
+    //resets the emojis
+    const newBoard = Array(board.length).fill("🎲")
+    setBoard(newBoard)
+    // Randomize the treasure and bomb locations
+    const newTreasureLocation = Math.floor(Math.random() * newBoard.length)
+    const newbombLocation = Math.floor(Math.random() * newBoard.length)
+    setTreasureLocation(newTreasureLocation)
+    setBombLocation(newbombLocation)
+
+  }
+
   return (
     <>
-      <h1>Treasure Hunt Game</h1>
+      <h1>Try your Luck</h1>
+      <h2>Alien is the winner, beware of the devil!</h2>
       <div className="gameboard">
       {board.map((value, index) => {
         return(
@@ -50,6 +63,7 @@ let updatedBoard = [...board]
         )
       })}
       </div>
+      <button onClick={handleOnClick}>Restart Game</button>
     </>
   )
 }
