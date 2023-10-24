@@ -7,3 +7,9 @@ h1 {
   width: 200px;
   border: 1px solid black;
 }
+.gameboard {
+  display: flex;
+  flex-wrap: wrap;
+  width: 620px;
+  margin: auto;
+}
