@@ -1,7 +1,9 @@
 h1 {
   text-align: center;
 }
-
+h2 {
+  text-align: center;
+}
 .square {
   height: 200px;
   width: 200px;
@@ -15,4 +17,9 @@ h1 {
   width: 620px;
   margin: auto;
   
+}
+button{
+  flex-wrap: auto;
+  margin: auto;
+  background-color:crimson;
 }
