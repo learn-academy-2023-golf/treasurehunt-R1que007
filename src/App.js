@@ -32,6 +32,7 @@ const App = () => {
    } else if (bombLocation === index){
     updatedBoard[index] = "👹"
    setBoard(updatedBoard)
+   
    }
   }
   const handleOnClick = () => {
